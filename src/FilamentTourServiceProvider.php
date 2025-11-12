@@ -35,8 +35,9 @@ class FilamentTourServiceProvider extends PackageServiceProvider
         if (file_exists($distJsPath)) {
             $assets[] = Js::make('filament-tour-scripts', $distJsPath)->module();
         } elseif (file_exists($srcJsPath)) {
-            // Register source file (non-module) as a graceful fallback.
-            $assets[] = Js::make('filament-tour-scripts', $srcJsPath);
+            // Source may contain ES module imports — register as a module so browsers
+            // load it with `type="module"` and accept `import` statements.
+            $assets[] = Js::make('filament-tour-scripts', $srcJsPath)->module();
         }
 
         if (! empty($assets)) {
