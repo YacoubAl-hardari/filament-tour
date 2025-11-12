@@ -22,11 +22,24 @@ class FilamentTourServiceProvider extends PackageServiceProvider
     public function packageBooted(): void
     {
         // Register CSS and JS assets
-        FilamentAsset::register([
-            Css::make('filament-tour-styles', __DIR__ . '/../resources/css/shepherd-tour.css'),
-            Js::make('filament-tour-scripts', __DIR__ . '/../resources/dist/filament-tour.js')
-                ->module(), // Load as ES Module
-        ], package: 'yacoubalhaidari/filament-tour');
+        $cssPath = __DIR__ . '/../resources/css/shepherd-tour.css';
+        $distJsPath = __DIR__ . '/../resources/dist/filament-tour.js';
+        $srcJsPath = __DIR__ . '/../resources/js/shepherd-tour.js';
+
+        $assets = [
+            Css::make('filament-tour-styles', $cssPath),
+        ];
+        
+        if (file_exists($distJsPath)) {
+            $assets[] = Js::make('filament-tour-scripts', $distJsPath)->module();
+        } elseif (file_exists($srcJsPath)) {
+            // Register source file (non-module) as a graceful fallback.
+            $assets[] = Js::make('filament-tour-scripts', $srcJsPath);
+        }
+
+        if (! empty($assets)) {
+            FilamentAsset::register($assets, package: 'yacoubalhaidari/filament-tour');
+        }
     }
 }
 
