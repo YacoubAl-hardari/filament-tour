@@ -7,6 +7,7 @@ use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use YacoubAlhaidari\FilamentTour\Console\PublishAssetsCommand;
 
 class FilamentTourServiceProvider extends PackageServiceProvider
 {
@@ -16,7 +17,8 @@ class FilamentTourServiceProvider extends PackageServiceProvider
     {
         $package
             ->name(static::$name)
-            ->hasViews();
+            ->hasViews()
+            ->hasCommand(PublishAssetsCommand::class);
     }
 
     public function packageBooted(): void
@@ -29,7 +31,7 @@ class FilamentTourServiceProvider extends PackageServiceProvider
         $assets = [
             Css::make('filament-tour-styles', $cssPath),
         ];
-        
+
         if (file_exists($distJsPath)) {
             $assets[] = Js::make('filament-tour-scripts', $distJsPath)->module();
         } elseif (file_exists($srcJsPath)) {
