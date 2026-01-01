@@ -1,0 +1,26 @@
+{
+    "name": "@yacoubalhaidari/filament-tour",
+    "version": "1.0.0",
+    "description": "An interactive guided tour for Filament Admin Panel using Shepherd.js",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "node bin/build.js --dev",
+        "build": "node bin/build.js"
+    },
+    "dependencies": {
+        "shepherd.js": "^11.2.0"
+    },
+    "devDependencies": {
+        "esbuild": "^0.19.0"
+    },
+    "keywords": [
+        "filament",
+        "tour",
+        "shepherd",
+        "guide"
+    ],
+    "author": "Yacoub Alhaidari",
+    "license": "MIT"
+}
+
