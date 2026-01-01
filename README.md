@@ -8,6 +8,12 @@ An interactive guided tour for the Filament admin panel powered by Shepherd.js.
 
 This plugin adds a tour trigger button to the Filament user menu and lets you build a step‑by‑step walkthrough of your panel pages, with full control over colors, texts, and welcome/finish screens.
 
+## 🎥 Filament Tour – Video Demo
+
+[![Filament Tour – Video Demo](https://img.youtube.com/vi/T3nCOYcl3Do/maxresdefault.jpg)](https://www.youtube.com/watch?v=T3nCOYcl3Do)
+
+> Click the image to watch the full video on YouTube.
+
 ---
 
 ## Requirements
