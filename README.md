@@ -1,8 +1,18 @@
+
+<img width="2816" height="1536" alt="Gemini_Generated_Image_xwwnlrxwwnlrxwwn" src="https://github.com/user-attachments/assets/f9b79e27-5051-4a70-a295-50f450a94c4d" />
+
+
 ## Filament Tour
 
 An interactive guided tour for the Filament admin panel powered by Shepherd.js.
 
 This plugin adds a tour trigger button to the Filament user menu and lets you build a step‑by‑step walkthrough of your panel pages, with full control over colors, texts, and welcome/finish screens.
+
+## 🎥 Filament Tour – Video Demo
+
+[![Filament Tour – Video Demo](https://img.youtube.com/vi/T3nCOYcl3Do/maxresdefault.jpg)](https://www.youtube.com/watch?v=T3nCOYcl3Do)
+
+> Click the image to watch the full video on YouTube.
 
 ---
 
